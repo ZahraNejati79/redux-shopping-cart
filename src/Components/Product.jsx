@@ -1,7 +1,10 @@
 const Product = ({ producs }) => {
   return producs.map((p) => {
     return (
-      <div className="flex items-center justify-between w-full md:w-2/3 lg:w-2/5  shadow-lg hover:shadow-2xl cursor-pointer rounded-lg mb-4">
+      <div
+        key={p.id}
+        className="flex items-center justify-between w-full md:w-2/3 lg:w-2/5  shadow-lg hover:shadow-2xl cursor-pointer rounded-lg mb-4"
+      >
         <div className="rounded-l-2xl h-40 w-40 bg-yellow-500 mr-2">
           <img alt="" />
         </div>
