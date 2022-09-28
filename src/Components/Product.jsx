@@ -1,4 +1,6 @@
-const Product = ({ producs }) => {
+import { connect } from "react-redux";
+import { addToCart } from "../Redux/Shopping/Shopping-action";
+const Product = ({ producs, addToCart }) => {
   return producs.map((p) => {
     return (
       <div
@@ -16,7 +18,10 @@ const Product = ({ producs }) => {
         </div>
 
         <div className="flex flex-col items-center justify-evenly mr-4">
-          <button className="bg-yellow-500 p-2 rounded-lg">
+          <button
+            onClick={() => addToCart(p.id)}
+            className="bg-yellow-500 p-2 rounded-lg"
+          >
             افزودن به سبد خرید
           </button>
         </div>
@@ -25,4 +30,10 @@ const Product = ({ producs }) => {
   });
 };
 
-export default Product;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (id) => dispatch(addToCart(id)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Product);
