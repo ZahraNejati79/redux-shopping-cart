@@ -1,5 +1,10 @@
 const Cart = () => {
-  return <h2>this is cart page</h2>;
+  return (
+    <div className="flex items-center justify-evenly">
+      <div>products</div>
+      <div>check prices</div>
+    </div>
+  );
 };
 
 export default Cart;
