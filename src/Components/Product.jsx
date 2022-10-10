@@ -7,7 +7,7 @@ const Product = ({ producs, addToCart }) => {
         key={p.id}
         className="flex items-center justify-between w-full md:w-2/3 lg:w-2/5  shadow-lg hover:shadow-2xl cursor-pointer rounded-lg mb-4"
       >
-        <div className="rounded-l-2xl h-40 w-40 bg-yellow-500 mr-2">
+        <div className="rounded-l-2xl h-40 w-40 bg-red-200 mr-2">
           <img alt="" />
         </div>
 
@@ -20,7 +20,7 @@ const Product = ({ producs, addToCart }) => {
         <div className="flex flex-col items-center justify-evenly mr-4">
           <button
             onClick={() => addToCart(p.id)}
-            className="bg-yellow-500 p-2 rounded-lg"
+            className="bg-red-200 p-2 rounded-lg"
           >
             افزودن به سبد خرید
           </button>
