@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
-import { addToCart } from "../Redux/Shopping/Shopping-action";
-const Product = ({ producs, addToCart }) => {
+import { Link } from "react-router-dom";
+import { addToCart, loadCurrentItem } from "../Redux/Shopping/Shopping-action";
+const Product = ({ producs, addToCart, loadCurrentItem }) => {
   return producs.map((p) => {
     return (
       <div
@@ -17,10 +18,16 @@ const Product = ({ producs, addToCart }) => {
           <div>{p.price}</div>
         </div>
 
-        <div className="flex flex-col items-center justify-evenly mr-4">
+        <div className="flex flex-col items-center justify-evenly mr-4 gap-y-4">
+          <Link
+            to={`/product/${p.id}`}
+            className="hover:text-red-400  p-2 rounded-lg"
+          >
+            <button onClick={() => loadCurrentItem(p)}> دیدن محصول </button>
+          </Link>
           <button
             onClick={() => addToCart(p.id)}
-            className="bg-red-200 p-2 rounded-lg"
+            className="hover:text-red-400 p-2 rounded-lg"
           >
             افزودن به سبد خرید
           </button>
@@ -33,6 +40,7 @@ const Product = ({ producs, addToCart }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addToCart: (id) => dispatch(addToCart(id)),
+    loadCurrentItem: (item) => dispatch(loadCurrentItem(item)),
   };
 };
 
