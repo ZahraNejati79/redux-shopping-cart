@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import mem from "../products/876661122392077_1.jpg";
 import { addToCart, loadCurrentItem } from "../Redux/Shopping/Shopping-action";
 const Product = ({ producs, addToCart, loadCurrentItem }) => {
   return producs.map((p) => {
@@ -9,7 +10,7 @@ const Product = ({ producs, addToCart, loadCurrentItem }) => {
         className="flex items-center justify-between w-full md:w-2/3 lg:w-2/5  shadow-lg hover:shadow-2xl cursor-pointer rounded-lg mb-4"
       >
         <div className="rounded-l-2xl h-40 w-40 bg-red-200 mr-2">
-          <img alt="" />
+          {/* <img src= alt="" /> */}
         </div>
 
         <div className="flex flex-col items-center justify-evenly gap-y-4">
